@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>чек-лист</title>
+  </head>
+  <body>
+    <div class="check-list">
+      <div class="check-list__info">
+        <div class="circle-container">
+          <!-- меняем процент заполнения через переменную --percent -->
+          <svg viewBox="0 0 64 64" style="--percent: 2">
+            <circle class="circle-background" cx="32" cy="32" r="30"></circle>
+            <circle
+              class="circle-progress"
+              cx="32"
+              cy="32"
+              r="30"
+              style="
+                stroke-dasharray: calc(6.2832 * 30);
+                stroke-dashoffset: calc(6.2832 * 30 * (1 - var(--percent) / 100));
+              "
+            ></circle>
+            <text x="31" y="31" class="circle-text">0/7</text>
+          </svg>
+        </div>
+
+        <div class="actions">
+          <!-- слово "чеклист"" написал как по макету, но он через дефис должен быть: чек-лист -->
+          <button class="actions__button">Чеклист</button>
+
+          <h3 class="actions__title">
+            Выполнено:
+            <span class="current-step">0</span>
+            из
+            <span class="total-steps">7</span>
+            действий
+          </h3>
+
+          <p class="actions__text">Следующее действие: Созвониться с клиентом до 23.05.24 12:00</p>
+        </div>
+      </div>
+
+      <button class="check-list__button">Открыть чеклист</button>
+    </div>
+  </body>
+</html>
